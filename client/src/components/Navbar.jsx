@@ -6,16 +6,20 @@ function Navbar() {
     <nav className="navbar">
 
       <h2 className="logo">
-        CareerTrack AI
+       <span style={{ color: "black", fontWeight: "bold" }}>CareerTrack</span> AI
       </h2>
 
       <div className="nav-links">
 
         <Link to="/">Home</Link>
 
-        <Link to="/login">Login</Link>
+        <Link to="/login" className="nav-link2">
+          Login
+        </Link>
 
-        <Link to="/register">Register</Link>
+        <Link to="/register" className="nav-link2">
+          Register
+        </Link>
 
       </div>
 

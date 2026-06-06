@@ -1,36 +1,20 @@
 import Navbar from "../components/Navbar";
-
+import "./Login.css";
 function Login() {
   return (
     <>
       <Navbar />
 
-      <div className="container mt-5">
+      <div className="login-container">
+        <div className="login-form" style={{ maxWidth: "450px" }}>
+          <h2>Login</h2>
 
-        <div className="card mx-auto p-4"
-          style={{ maxWidth: "450px" }}>
+          <input placeholder="Email" />
 
-          <h2 className="text-center mb-4">
-            Login
-          </h2>
+          <input type="password" placeholder="Password" />
 
-          <input
-            className="form-control mb-3"
-            placeholder="Email"
-          />
-
-          <input
-            type="password"
-            className="form-control mb-3"
-            placeholder="Password"
-          />
-
-          <button className="btn btn-primary">
-            Login
-          </button>
-
+          <button className="login-button">Login</button>
         </div>
-
       </div>
     </>
   );

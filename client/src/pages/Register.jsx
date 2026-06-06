@@ -1,49 +1,24 @@
 import Navbar from "../components/Navbar";
-
+import "./Register.css";
 function Register() {
   return (
     <>
       <Navbar />
 
-      <div className="container mt-5">
+      <div className="register-container">
+        <div  className="register-form" style={{ maxWidth: "500px" }}>
+          <h2>Register</h2>
 
-        <div
-          className="card mx-auto p-4"
-          style={{ maxWidth: "500px" }}
-        >
+          <input placeholder="Full Name" />
 
-          <h2 className="text-center mb-4">
-            Register
-          </h2>
+          <input placeholder="Email" />
 
-          <input
-            className="form-control mb-3"
-            placeholder="Full Name"
-          />
+          <input type="password" placeholder="Password" />
 
-          <input
-            className="form-control mb-3"
-            placeholder="Email"
-          />
+          <input type="password" placeholder="Confirm Password" />
 
-          <input
-            type="password"
-            className="form-control mb-3"
-            placeholder="Password"
-          />
-
-          <input
-            type="password"
-            className="form-control mb-3"
-            placeholder="Confirm Password"
-          />
-
-          <button className="btn btn-success">
-            Register
-          </button>
-
+          <button className="registerbutton">Register</button>
         </div>
-
       </div>
     </>
   );
