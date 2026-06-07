@@ -6,7 +6,7 @@ function Navbar() {
     <nav className="navbar">
 
       <h2 className="logo">
-       <span style={{ color: "black", fontWeight: "bold" }}>CareerTrack</span> AI
+       <span style={{ color: "black", fontWeight: "bold" }}>Tracktern</span> AI
       </h2>
 
       <div className="nav-links">

@@ -1,4 +1,4 @@
-# CareerTrack AI
+# Tracktern AI
 
 A MERN Stack application for tracking job applications, preparing for interviews, managing notes, and improving placement success.
 
@@ -17,4 +17,3 @@ Node.js
 Express
 MongoDB
 JWT
-Bootstrap
