@@ -37,3 +37,15 @@
     cursor: pointer;
     font-size: 16px;
 }
+
+.toggle-auth {
+    text-align: center;
+    margin-top: 12px;
+    font-size: 14px;
+}
+
+.toggle-auth a {
+    color: #4f46e5;
+    text-decoration: none;
+    font-weight: 600;
+}

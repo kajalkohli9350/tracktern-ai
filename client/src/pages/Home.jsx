@@ -1,6 +1,7 @@
 import Navbar from "../components/Navbar";
 import "./Home.css";
 import careerimg from "../assests/careerimg.png";
+import { Link } from "react-router-dom";
 
 function Home() {
   return (
@@ -17,7 +18,9 @@ function Home() {
             chances of landing your dream job.
           </p>
 
-          <button>Get Started</button>
+          <Link to="/register">
+            <button>Get Started</button>
+          </Link>
         </div>
 
         <div className="hero-right">
