@@ -21,7 +21,7 @@ app.get("/", (req, res) => {
 
 app.use(
   "/api/auth",
-  require("./routes/authRoutes")
+  require("./routes/authroutes")
 );
 
 app.get("/api/register", async (req, res) => {
