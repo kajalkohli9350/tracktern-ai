@@ -10,7 +10,8 @@ function Home() {
 
       <section className="hero">
         <div className="hero-left">
-          <h1 className="p1">Track Jobs smarter. Prepare Better.</h1>
+          <h1 className="p1">Track Jobs smarter.</h1>
+            <h1 className="p3" > Prepare Better.</h1>
           <h1 className="p2">Get Hired.</h1>
 
           <p>

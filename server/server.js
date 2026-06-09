@@ -48,3 +48,10 @@ app.listen(PORT, () => {
     `Server Running On ${PORT}`
   );
 });
+
+app.use(
+"/api/applications",
+require(
+"./routes/applicationRoutes"
+)
+);

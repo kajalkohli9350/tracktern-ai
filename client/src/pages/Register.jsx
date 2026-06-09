@@ -66,7 +66,11 @@ function Register() {
             onChange={handleChange}
           />
 
-          <input type="password" placeholder="Confirm Password" />
+          <input
+            type="password"
+            placeholder="Confirm Password"
+            name="confirmPassword"
+          />
 
           <button className="registerbutton" onClick={handleSubmit}>
             Register
