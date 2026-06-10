@@ -1,0 +1,6 @@
+.main-content {
+  margin-left: calc(var(--sidebar-width) + 24px);
+  padding: calc(var(--topbar-height) + 30px) 30px 30px 30px;
+  /* min-height:100vh; */
+  background: #f3f4f6;
+}
