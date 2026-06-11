@@ -5,6 +5,7 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Dashboard from "./pages/Dashboard";
 import Applications from "./pages/Applications";
+import AddApplication from "./pages/AddApplication";
 import Interviews from "./pages/Interviews";
 import Notes from "./pages/Notes";
 import Aiassistant from "./pages/Aiassistant";
@@ -23,6 +24,7 @@ function App() {
 
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/applications" element={<Applications />} />
+        <Route path="/add-application" element={<AddApplication />} />
         <Route path="/interviews" element={<Interviews />} />
         <Route path="/notes" element={<Notes />} />
         <Route path="/AIassistant" element={<Aiassistant />} />

@@ -1,84 +1,156 @@
-function AddApplication() {
-    const [formData,
-setFormData]
-=
-useState({
+import { useState } from "react";
+import "./AddApplication.css";
+import axios from "axios";
 
- companyName:"",
- role:"",
- status:"Applied"
+function AddApplication({ closeModal, fetchApplications }) {
 
-});
-const handleChange =
-(e)=>{
+  const [formData, setFormData] = useState({
+    companyName: "",
+    role: "",
+    status: "Applied",
+    notes: ""
+  });
 
- setFormData({
+  const handleChange = (e) => {
 
-  ...formData,
+    setFormData({
 
-  [e.target.name]:
-  e.target.value
+      ...formData,
 
- });
+      [e.target.name]:
+      e.target.value
 
-}
-const handleSubmit =
-async(e)=>{
+    });
 
- e.preventDefault();
+  };
 
- await axios.post(
 
- "http://localhost:5000/api/applications/add",
+   const handleSubmit = async (e) => {
 
- formData
+  e.preventDefault();
 
- );
+  try {
 
- alert(
- "Application Added"
- );
+    const token =
+    localStorage.getItem("token");
 
-}
-    return (
-        <div className="add-application">
-            <h2>Add Application</h2>
-            <form onSubmit={handleSubmit}>
-                <div>
-                    <label>Company Name:</label>
-                    <input
-                        type="text"
-                        name="companyName"
-                        value={formData.companyName}
-                        onChange={handleChange}
-                    />
-                </div>
-                <div>
-                    <label>Role:</label>
-                    <input
-                        type="text"
-                        name="role"
-                        value={formData.role}
-                        onChange={handleChange}
-                    />
-                </div>
-                <div>
-                    <label>Status:</label>
-                    <select
-                        name="status"
-                        value={formData.status}
-                        onChange={handleChange}
-                    >
-                        <option value="Applied">Applied</option>
-                        <option value="Interview">Interview</option>
-                        <option value="Offer">Offer</option>
-                         <option value="Rejected">Rejected</option>
-                    </select>
-                </div>
-                <button type="submit">Add Application</button>
-            </form>
-        </div>
+    const res =
+    await axios.post(
+
+      "http://localhost:5000/api/applications/add",
+
+      formData,
+
+      {
+        headers:{
+          Authorization:
+          `Bearer ${token}`
+        }
+      }
+
     );
-}
+
+    alert(
+      "Application Added Successfully"
+    );
+
+    await fetchApplications();
+    closeModal();
+
+  }
+
+  catch(error){
+
+    console.log(error);
+
+    alert(
+      "Failed To Add Application"
+    );
+
+  }
+
+};
+  
+
+  return (
+
+    <div className="modal-overlay">
+
+      <div className="modal">
+
+        <div className="modal-header">
+
+          <h2>Add New Application</h2>
+
+          <button
+            onClick={closeModal}
+            className="close-btn"
+          >
+            ✕
+          </button>
+
+        </div>
+
+        <form onSubmit={handleSubmit}>
+
+          <label>Company Name</label>
+
+          <input
+            type="text"
+            name="companyName"
+            onChange={handleChange}
+          />
+
+          <label>Role</label>
+
+          <input
+            type="text"
+            name="role"
+            onChange={handleChange}
+          />
+
+          <label>Status</label>
+
+          <select
+            name="status"
+            onChange={handleChange}
+          >
+            <option>Applied</option>
+            <option>Interview</option>
+            <option>Offer</option>
+            <option>Rejected</option>
+          </select>
+
+          <label>Notes</label>
+
+          <textarea
+            name="notes"
+            onChange={handleChange}
+          />
+
+          <div className="modal-buttons">
+
+            <button
+              type="button"
+              onClick={closeModal}
+            >
+              Cancel
+            </button>
+
+            <button  type="submit" onClick={handleSubmit}> 
+              Save Application
+            </button>
+
+          </div>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  );
+  };
+
 
 export default AddApplication;
