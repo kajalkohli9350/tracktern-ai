@@ -5,6 +5,9 @@ const dotenv = require("dotenv");
 const connectDB = require("./config/db");
 const User = require("./models/User");
 
+const applicationRoutes =
+require("./routes/applicationRoutes");
+
 dotenv.config();
 
 connectDB();
@@ -51,7 +54,5 @@ app.listen(PORT, () => {
 
 app.use(
 "/api/applications",
-require(
-"./routes/applicationRoutes"
-)
+applicationRoutes
 );
